@@ -27,7 +27,7 @@ public class Main {
                 System.out.println("Your list:");
                 printList(list);
             } else if (numberToChoose.equals("3")) {
-
+                editItemList(scanner,list);
             } else if (numberToChoose.equals("4")) {
                 removeFromItemList(scanner, list);
             } else if (numberToChoose.equals("5")) {
@@ -72,8 +72,13 @@ public class Main {
     }
 
     //dodaje mogucnost mjenjanja vec dodanih itema na listi
-    public static void editItemList() {
-
+    public static void editItemList(Scanner scanner, ArrayList<String> list) {
+        System.out.println("Which task you want to edit? (Choose number)");
+        printList(list);
+        int inputNumber = Integer.valueOf(scanner.nextLine());
+        System.out.println("Edit " + list.get(inputNumber - 1) +  ":");
+        String editInput = scanner.nextLine();
+        list.set(inputNumber - 1, editInput);
     }
 
     // briše određeni item s liste
@@ -84,15 +89,16 @@ public class Main {
             list.remove(input - 1);
 
         System.out.println("Task number " + input + " has been removed." );
-
     }
-
+    //brise cijelu listu
     public static void deleteList(Scanner scanner, ArrayList<String> list) {
-        System.out.println("Are you sure you want to delete whole list? This action can't be undone!");
+        System.out.println("Are you sure you want to delete whole list? This action can not be undone!\n(Yes to delete or No to cancel)");
         String choose = scanner.nextLine();
         if (choose.equalsIgnoreCase("yes")) {
             list.clear();
-        } else {
+        } else if (choose.equalsIgnoreCase("no")) {
+            return;
+        }{
             System.out.println("Wrong input!");
         }
     }
