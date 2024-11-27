@@ -10,7 +10,6 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
         ArrayList<String> list = new ArrayList<>();
 
-
         while (true) {
             System.out.println("What you want to do:");
             System.out.println("1 - Add item to your list");
@@ -22,24 +21,24 @@ public class Main {
             String numberToChoose = scanner.nextLine();
 
             if (numberToChoose.equals("1")) {
-                addToList(scanner,list);
+                addToList(scanner, list);
                 continue;
-            }
-            else if (numberToChoose.equals("2")) {
-                itemList(list);
-            }
-            else  if (numberToChoose.equals("3")) {
+            } else if (numberToChoose.equals("2")) {
+                System.out.println("Your list:");
+                printList(list);
+            } else if (numberToChoose.equals("3")) {
 
-            }
-            else  if (numberToChoose.equals("X")) {
+            } else if (numberToChoose.equals("4")) {
+                removeFromItemList(scanner, list);
+            } else if (numberToChoose.equals("5")) {
+                deleteList(scanner, list);
+            } else if (numberToChoose.equals("X")) {
                 break;
-            }
-            else {
+            } else {
                 System.out.println("Wrong input!");
                 continue;
             }
         }
-
 
 
     }
@@ -60,15 +59,14 @@ public class Main {
     }
 
     //izlistava iteme
-    public static void itemList(ArrayList<String> list) {
-        System.out.println("Your list:");
+    public static void printList(ArrayList<String> list) {
+
         if (list.isEmpty()) {
             System.out.println("Your list is empty!");
             System.out.println("");
         }
-        for (String izlistaj: list) {
-            System.out.println(izlistaj);
-
+        for (int i = 0; i < list.size(); i++) {
+            System.out.println(i + 1 + ") " + list.get(i));
         }
         System.out.println("");
     }
@@ -77,16 +75,29 @@ public class Main {
     public static void editItemList() {
 
     }
-    // briše određeni item s liste
-    public static void removeFromItemList(ArrayList<String> list, Scanner scanner) {
-        System.out.println("Which task you want to delete?");
-        String input = scanner.nextLine();
 
-        for ()
+    // briše određeni item s liste
+    public static void removeFromItemList(Scanner scanner, ArrayList<String> list) {
+        System.out.println("Which task you want to delete? (Choose number)");
+        printList(list);
+        int input = Integer.valueOf(scanner.nextLine());
+            list.remove(input - 1);
+
+        System.out.println("Task number " + input + " has been removed." );
+
     }
 
-
-
-
-
+    public static void deleteList(Scanner scanner, ArrayList<String> list) {
+        System.out.println("Are you sure you want to delete whole list? This action can't be undone!");
+        String choose = scanner.nextLine();
+        if (choose.equalsIgnoreCase("yes")) {
+            list.clear();
+        } else {
+            System.out.println("Wrong input!");
+        }
+    }
 }
+
+
+
+
