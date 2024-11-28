@@ -25,6 +25,14 @@ public class Main {
                 lista.addToList();
             } else if (numberToChoose.equals("2")) {
                 lista.printList();
+            } else if (numberToChoose.equals("3")) {
+                lista.editList();
+            } else if (numberToChoose.equals("4")) {
+                lista.removeFromList();
+            } else if (numberToChoose.equals("5")) {
+                lista.deleteList();
+            } else if (numberToChoose.equals("X")) {
+                break;
             }
 
         }

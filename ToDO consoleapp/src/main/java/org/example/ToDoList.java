@@ -33,6 +33,36 @@ public class ToDoList {
         }
     }
 
+    public void editList() {
+        System.out.println("Which task you want to edit? (Choose number)");
+        printList();
+        int inputNumber = Integer.valueOf(scanner.nextLine());
+        System.out.println("Edit " + list.get(inputNumber - 1) +  ":");
+        String editInput = scanner.nextLine();
+        list.set(inputNumber - 1, editInput);
+    }
+
+    public void removeFromList() {
+        System.out.println("Which task you want to delete? (Choose number)");
+        printList();
+        int input = Integer.valueOf(scanner.nextLine());
+        list.remove(input - 1);
+
+        System.out.println("Task number " + input + " has been removed.");
+    }
+
+    public void deleteList() {
+        System.out.println("Are you sure you want to delete whole list? This action can not be undone!\n(Yes to delete or No to cancel)");
+        String choose = scanner.nextLine();
+        if (choose.equalsIgnoreCase("yes")) {
+            list.clear();
+        } else if (choose.equalsIgnoreCase("no")) {
+            return;
+        } else {
+            System.out.println("Wrong input");
+        }
+    }
+
 
 
 
