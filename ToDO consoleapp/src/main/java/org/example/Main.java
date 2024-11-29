@@ -40,7 +40,7 @@ public class Main {
 
 
 
-        ArrayList<String> list = new ArrayList<>();
+        ArrayList<ToDo> list = new ArrayList<>();
 
         ToDoList lista = new ToDoList(list, scanner);
 
@@ -50,9 +50,9 @@ public class Main {
             System.out.println("1 - Add item to your list");
             System.out.println("2 - Check your list");
             System.out.println("3 - Edit your list");
-            System.out.println("4 - Delete your item on your list");
+            System.out.println("4 - Delete task on your list");
             System.out.println("5 - Clear your list");
-            System.out.println("X - (case-sensitive) To end");
+            System.out.println("X - (case-sensitive) To exit");
             String numberToChoose = scanner.nextLine();
 
             switch (numberToChoose) {
@@ -74,12 +74,7 @@ public class Main {
                 case "X":
                     break label;
             }
-
         }
 
     }
 }
-
-
-
-

@@ -3,10 +3,10 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class ToDoList {
-    private ArrayList<String> list;
+    private ArrayList<ToDo> list;
     private Scanner scanner;
 
-    public ToDoList(ArrayList<String> list, Scanner scanner) {
+    public ToDoList(ArrayList<ToDo> list, Scanner scanner) {
         this.list = list;
         this.scanner = scanner;
     }
@@ -17,7 +17,7 @@ public class ToDoList {
         if (input.isEmpty()) {
             return;
         } else {
-            list.add(input);
+            list.add(new ToDo(input));
             System.out.println(input + " added.");
         }
     }
@@ -38,7 +38,7 @@ public class ToDoList {
         int inputNumber = Integer.valueOf(scanner.nextLine());
         System.out.println("Edit " + list.get(inputNumber - 1) +  ":");
         String editInput = scanner.nextLine();
-        list.set(inputNumber - 1, editInput);
+        list.set(inputNumber - 1, new ToDo(editInput));
     }
 
     public void removeFromList() {
@@ -62,9 +62,7 @@ public class ToDoList {
         }
     }
 
-
-
-
-
-
+    public ArrayList<ToDo> getList() {
+        return list;
+    }
 }

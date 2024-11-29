@@ -13,6 +13,10 @@ public class User {
         this.list = new ArrayList<>();
     }
 
+    public void addToDo(ToDo task) {
+        list.add(task);
+    }
+
     public String getUserName() {
         return userName;
     }
