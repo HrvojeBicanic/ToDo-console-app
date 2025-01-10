@@ -19,8 +19,7 @@ To set up the application on your local machine:
 1. **Clone the repository**  
    Open a terminal and run the following command:  
    ```bash  
-   git clone https://github.com/HrvojeBicanic/ToDo-console-app.git  
-   cd ToDo-console-app  
+   git clone https://github.com/HrvojeBicanic/ToDo-console-app.git
    ```
 2. **Navigate to the project directory:**   
    ```bash  
