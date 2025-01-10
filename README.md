@@ -16,8 +16,7 @@ A lightweight and intuitive console-based application for task management.
 
 To set up the application on your local machine:  
 
-1. **Clone the repository**  
-   Open a terminal and run the following command:  
+1. **Clone the repository**   
    ```bash  
    git clone https://github.com/HrvojeBicanic/ToDo-console-app.git
    ```
