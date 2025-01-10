@@ -21,18 +21,22 @@ To set up the application on your local machine:
    ```bash  
    git clone https://github.com/HrvojeBicanic/ToDo-console-app.git  
    cd ToDo-console-app  
+   ```
+2. **Navigate to the project directory:**   
+   ```bash  
+   cd ToDo-console-app/ToDO\ consoleapp/src/main/java/  
    ```  
 
-2. **Build the application**  
+3. **Compile the Java files**  
    Execute this command to compile the project:  
    ```bash  
-   cd ToDo-console-app  
+   javac org/example/*.java  
    ```  
 
-3. **Run the application**  
+4. **Run the application**  
    Start the app by entering the following:  
    ```bash  
-   javac *.java  
+   java org.example.Main  
    ```  
 
 ---
